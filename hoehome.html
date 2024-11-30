@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Website Project</title>
+    <style>
+      /* Basic Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        padding: 10px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      figure img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      figure figcaption {
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #555;
+      }
+
+      /* Tablet View */
+      @media (min-width: 772px) {
+        .container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        figure {
+          border-radius: 50%;
+        }
+
+        figure:last-child {
+          grid-column: span 2;
+        }
+      }
+
+      /* Large Screen View */
+      @media (min-width: 992px) {
+        .container {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        figure {
+          border-radius: 0;
+        }
+
+        figure:nth-child(3n) {
+          grid-column: span 2;
+        }
+      }
+
+      /* Prefers Reduced Motion */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* Dark Mode */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #222;
+          color: #ddd;
+        }
+
+        figure {
+          background-color: #333;
+          color: #ffcc00;
+          border-color: black;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Responsive and Accessible Website</h1>
+    <div class="container">
+      <figure>
+        <img
+          src="https://cdn.pixabay.com/photo/2016/12/19/08/39/mobile-phone-1917737_640.jpg"
+          alt="Person using a mobile phone"
+        />
+        <figcaption>Mobile Phone</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="https://cdn.pixabay.com/photo/2016/09/22/10/43/eye-1686932_640.jpg"
+          alt="Close-up view of an artistic eye"
+        />
+        <figcaption>Artistic Eye</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="https://cdn.pixabay.com/photo/2016/10/13/16/23/genoa-1738159_640.jpg"
+          alt="Harbor view in the city of Genoa"
+        />
+        <figcaption>Genoa Harbor</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="https://cdn.pixabay.com/photo/2022/01/20/15/34/monkey-6952630_640.jpg"
+          alt="Monkey sitting on a tree branch"
+        />
+        <figcaption>Curious Monkey</figcaption>
+      </figure>
+    </div>
+  </body>
+</html>
